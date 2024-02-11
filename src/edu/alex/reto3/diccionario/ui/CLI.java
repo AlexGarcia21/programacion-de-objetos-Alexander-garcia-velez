@@ -7,6 +7,11 @@ import java.util.Scanner;
 public class CLI {
     private static String cantidadCaracteres;
 
+    /**
+     * primero el menu y mandamos a llamar las variables de
+     * Diccionario
+     * @param diccionario
+     */
     public static void menuDiccionario(Diccionario diccionario){
     Scanner scanner=new Scanner(System.in);
     while (true){

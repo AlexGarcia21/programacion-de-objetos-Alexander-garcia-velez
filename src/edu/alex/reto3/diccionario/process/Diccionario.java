@@ -2,6 +2,10 @@ package edu.alex.reto3.diccionario.process;
 
 import java.util.Arrays;
 
+/**
+ * ingresamos las variables de las
+ * palabras yb significados
+ */
 public class Diccionario {
     private String[] palabras;
     private String[] significado;
@@ -30,12 +34,19 @@ public class Diccionario {
         return significado[index];
     }
 
+    /**
+     *
+     */
     public void printList() {
         Arrays
                 .stream(palabras)
                 .forEach(System.out::println);
     }
 
+    /**
+     * aqui ews facil solo usamos el for
+     * para mostrar el usuario la palabra que ingrese los caracteres
+     */
     public static void cantidadCaracteres() {
         String[] palabras = {"maleante", "casa", "gato", "hip hop",
                 "dropset", "pecera", "omnipotente", "pastel", "carro", "tabaco"};
@@ -45,6 +56,10 @@ public class Diccionario {
         }
     }
 
+    /**
+     * aqui igual contamos la cantidad de caracteres y se
+     * las mostramos al usuario
+     */
     public void cantidaddecaracteressig() {
         String[] significado = {"Que malea o daña", "hogar del humano", "animal domestico", "movimiento cultural y artístico",
                 "consiste en cargar un determinado peso en ir bajandolo sin descanso", "Vasija o globo de cristal", "significa todo, y potente",
