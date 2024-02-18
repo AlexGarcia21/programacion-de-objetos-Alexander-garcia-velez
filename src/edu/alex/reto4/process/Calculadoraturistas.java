@@ -1,18 +1,22 @@
 package edu.alex.reto4.process;
 
-import java.text.DecimalFormat;
+import edu.alex.reto4.Data.Ticket;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import static edu.alex.reto4.ui.CLI.venta;
+import static edu.alex.reto4.Data.Persona.pasajeros;
 
 /**
- * en este coidgo se utilizo el array list
+ * en este coidgo se utilizo el array  para poder
+ * ingresar varios pasajero.
 
  */
 
 public class Calculadoraturistas {
+
+    private static Ticket.TicketManager ticketManager;
 
     public static class Boleto {
 
@@ -96,20 +100,17 @@ public class Calculadoraturistas {
             System.out.println("3. Salir");
             System.out.print("Ingrese una optician: ");
             int opcion = scanner.nextInt();
-            scanner.nextLine(); // Consumir el salto de línea pendiente
+            scanner.nextLine();
 
             switch (opcion) {
                 case 1:
                     Boleto.realizarVenta(scanner, ventas);
+                    ticketManager.venderBoleto(comprador,pasajeros);
                     break;
                 case 2:
-                    double importeTotal = venta.getImporteTotal();
-                    DecimalFormat df = new DecimalFormat();
-                    System.out.println("Ticket de venta:");
-                    String comprador = null;
-                    System.out.println("Comprador: " + comprador);
-                    System.out.println("Cantidad de boletos: " + new Boleto().getClass());
-                    System.out.println("Importe" + new Boleto.Venta();
+                    System.out.println("datos de compra");
+                    System.out.println("-----Datos de su compra-----");
+                    ArrayList<Ticket> ticketList = ticketManager.getTicketList();
 
                 case 3:
                     System.out.println("Saliendo...");
@@ -123,7 +124,10 @@ public class Calculadoraturistas {
 
 }
 /**
- * al final de cueentas este codigos se elaboro con pura prueba y error del codigo
+ * al final de cueentas este codigos se elaboro con pura prueba y error del codigo.
+ * con ayuda de mi compañero juan francisco,ias y
  * tutoriales vistos:https://youtu.be/3asmLRCsASs?si=MTA9EfEcsk94CpiQ
  * https://youtu.be/D0VH50zFVIA?si=v2AUNRNTtoEeAph9
+ *
+ *se logro su elaboracion.
  */

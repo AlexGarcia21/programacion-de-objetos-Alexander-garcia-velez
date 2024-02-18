@@ -1,7 +1,7 @@
 package edu.alex.reto4.Data;
 
 import java.util.ArrayList;
-import java.util.List;
+import java.util.
 
 public class Boleto {
     public class Boleto1{
@@ -18,20 +18,22 @@ public class Boleto {
         // Otros métodos y constructores
     }
 
-    public static class Venta {
-        private String comprador;
-        private List<Pasajero> pasajeros;
-        private int cantidadBoletos;
-        private double importeTotal;
+    public static void Venta
 
-        public Venta(String comprador, int cantidadBoletos) {
-            this.comprador = comprador;
-            this.pasajeros = new ArrayList<>();
-            this.cantidadBoletos = cantidadBoletos;
-            this.importeTotal = 1250.50 * cantidadBoletos;
+    {
+        final ArrayList<Object> pasajeros;
 
+        final int cantidadBoletos;
 
-        }
+        final String comprador;
+
+        final double importeTotal;
+        this.comprador = comprador;
+        this.pasajeros = new ArrayList<>();
+        this.cantidadBoletos = cantidadBoletos;
+        this.importeTotal = 1250.50 * cantidadBoletos;
+    }
+
 
         public Venta(Object cantidadBoletos) {
         }
@@ -43,6 +45,8 @@ public class Boleto {
         public double getImporteTotal() {
             return importeTotal;
         }
+        public double getTicket(){
+        return  Ticket;
     }
 
 }
