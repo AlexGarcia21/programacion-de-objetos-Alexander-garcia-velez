@@ -1,7 +1,6 @@
 package edu.alex.reto4.Data;
 
 import java.util.ArrayList;
-import java.util.
 
 public class Boleto {
     public class Boleto1{
@@ -15,7 +14,6 @@ public class Boleto {
             return cantidad;
         }
 
-        // Otros métodos y constructores
     }
 
     public static void Venta

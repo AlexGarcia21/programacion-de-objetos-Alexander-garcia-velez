@@ -60,7 +60,7 @@ public class Calculadoraturistas {
 
             System.out.print("Ingrese la cantidad de boletos: ");
             int cantidadBoletos = scanner.nextInt();
-            scanner.nextLine(); // Consumir el salto de línea pendiente
+            scanner.nextLine();
 
             Venta venta = new Venta(comprador, cantidadBoletos);
 
@@ -109,7 +109,6 @@ public class Calculadoraturistas {
                     break;
                 case 2:
                     System.out.println("datos de compra");
-                    System.out.println("-----Datos de su compra-----");
                     ArrayList<Ticket> ticketList = ticketManager.getTicketList();
 
                 case 3:
@@ -128,6 +127,7 @@ public class Calculadoraturistas {
  * con ayuda de mi compañero juan francisco,ias y
  * tutoriales vistos:https://youtu.be/3asmLRCsASs?si=MTA9EfEcsk94CpiQ
  * https://youtu.be/D0VH50zFVIA?si=v2AUNRNTtoEeAph9
- *
  *se logro su elaboracion.
+ * jaja en si ahora ya esta al 100 creo.
+ *
  */
