@@ -10,7 +10,7 @@ public class Persona {
     public static class Pasajero {
         private String nombre;
 
-    public Pasajero(String nombre) {
+    public Pasajero() {
             this.nombre = nombre;
         }
 

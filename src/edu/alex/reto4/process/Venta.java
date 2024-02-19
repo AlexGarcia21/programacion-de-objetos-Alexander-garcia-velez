@@ -6,19 +6,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 public  class Venta {
-    private final String comprador;
-    private final int cantidadBoletos;
-    private final double importeTotal;
-    private final List<Persona.Pasajero> pasajeros;
+    public static Object ventaBoletos;
+    private String comprador;
+    private int cantidadBoletos;
+    private double importeTotal;
+    private List<Persona.Pasajero> pasajeros;
 
-    public Venta(String comprador, int cantidadBoletos) {
+    public void ventaBoletos() {
         this.comprador = comprador;
-        this.pasajeros = new ArrayList<>();
         this.cantidadBoletos = cantidadBoletos;
+        this.pasajeros = new ArrayList<>();
         this.importeTotal = 1250.50 * cantidadBoletos;
+        System.out.println("Su importe total es de: " + importeTotal);
     }
 
-    public void agregarPasajero(Persona.Pasajero pasajero) {
+    public void agregarPasajero() {
+        Persona.Pasajero pasajero = new Persona.Pasajero();
         this.pasajeros.add(pasajero);
     }
 
