@@ -1,36 +1,17 @@
 package edu.alex.reto4.Data;
 
-import jdk.internal.icu.text.UnicodeSet;
-
-import java.util.List;
-
+/**
+ * aqui solo se guarda el nombre del comprador
+ * para que se vuelva a regresar en pantalla.
+ */
 public class Persona {
-    private static UnicodeSet pasajeros;
-
-    public static class Pasajero {
-        private String nombre;
-
-    public Pasajero() {
-            this.nombre = nombre;
-        }
-
-        public String getNombre() {
-            return nombre;
-        }
+    private String nombrecompleto;
+    public Persona (String nombrecompleto){
+        this.nombrecompleto = nombrecompleto;
     }
-    public static void agregarPasajero(Pasajero pasajero) {
-        pasajeros.add((CharSequence) pasajero);
+    public String getnombrecompleto(){
+        return nombrecompleto;
     }
-
-    public String getComprador() {
-        String comprador = null;
-        return comprador;
-    }
-
-    public List<Pasajero> getPasajeros() {
-        return (List<Pasajero>) pasajeros;
-    }
-
 
 }
 
