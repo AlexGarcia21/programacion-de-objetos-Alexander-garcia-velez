@@ -1,5 +1,6 @@
 package edu.alex.reto5.reto5_2.doc;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Movimientos {
@@ -7,19 +8,40 @@ public class Movimientos {
     private String descripcion;
     private double monto;
 
-    public void Movimiento(Date fecha, String descripcion, double monto) {
+    private ArrayList<Movimientos> movimientos;
+
+
+    public Movimientos(Date fecha, String descripcion, double monto) {
         this.fecha = fecha;
         this.descripcion = descripcion;
         this.monto = monto;
+        movimientos = new ArrayList<>();
+
     }
 
     public String toString() {
-        return "Fecha: " + fecha + ", Descripción: " + descripcion + ", Monto: $" + monto;
+        StringBuilder sb = new StringBuilder();
+        for (Movimientos movimiento : movimientos) {
+            sb.append(movimiento.toString()).append("\n");
+        }
+        return sb.toString();
     }
-    ArrayList<Movimiento> movimientos = new ArrayList<>();
 
-    // Simulación de movimientos en el banco
-        movimientos.add(new Movimiento(new Date(), "Depósito", 1000.0));
-        movimientos.add(new Movimiento(new Date(), "Retiro", -500.0));
-        movimientos.add(new Movimiento(new Date(), "Transferencia recibida", 300.0));
+    public static class Movimiento {
+        private Date fecha;
+        private String descripcion;
+        private double monto;
+
+        public Movimiento(Date fecha, String descripcion, double monto) {
+            this.fecha = fecha;
+            this.descripcion = descripcion;
+            this.monto = monto;
+        }
+
+        @Override
+        public String toString() {
+            return "Fecha: " + fecha + ", Descripción: " + descripcion + ", Monto: $" + monto;
+        }
+
+    }
 }
