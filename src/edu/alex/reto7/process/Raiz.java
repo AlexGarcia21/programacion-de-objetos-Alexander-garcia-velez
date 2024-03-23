@@ -2,7 +2,7 @@ package edu.alex.reto7.process;
 
 public class Raiz extends Multiplicacion{
     @Override
-    public int calcular(int valor1, int b) {
+    public int calcular(int valor1, int valor2) {
         int resultado = 0;
         int i = 1;
 

@@ -6,4 +6,5 @@ package edu.alex.reto7.process;
 
 public abstract class Operacion {
     public abstract int calcular(int valor1, int valor2);
+    
 }

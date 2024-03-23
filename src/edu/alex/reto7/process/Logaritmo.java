@@ -1,10 +1,12 @@
 package edu.alex.reto7.process;
 
+import edu.alex.reto7.ui.Textos;
+
 public class Logaritmo extends Division {
     @Override
     public int calcular(int valor1, int valor2) {
         if (valor1 <= 1 || valor2 <= 0) throw new ArithmeticException(
-                "El logaritmo no esta definido");
+                Textos.ERROR_LOG);
         int log = 1;
         int multiplicacion;
         int potenciaBase = valor2;
