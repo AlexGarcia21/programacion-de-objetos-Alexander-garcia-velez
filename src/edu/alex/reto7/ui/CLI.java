@@ -10,118 +10,182 @@ import java.util.Scanner;
 
 
 public class CLI {
+
     public static void showMenu(){
-        System.out.println("------Seleccione la oeracion que desa realizar------");
-        System.out.println("1.Sumar");
-        System.out.println("2.Restar");
-        System.out.println("3.Multiplicar");
-        System.out.println("4.Dividir");
-        System.out.println("5.Potencia");
-        System.out.println("6.Modulo");
-        System.out.println("7.Raiz");
-        System.out.println("8.Logaritmo");
+
+
+        Scanner scanner = new Scanner(System.in);
+        int opcion;
+        System.out.println("elige tu opcion de idioma");
+        System.out.println("1.Español");
+        System.out.println("2.Ingles");
+        opcion =scanner.nextInt();
+        if (opcion ==1)
+        {
+            Textos español = new Español();
+            System.out.println(español.MENU);
+            System.out.println(español.TEXTO_1);
+            System.out.println(español.TEXTO2);
+            System.out.println(español.TEXTO3);
+            System.out.println(español.TEXTO4);
+            System.out.println(español.TEXTO5);
+            System.out.println(español.TEXTO6);
+            System.out.println(español.TEXTO7);
+            System.out.println(español.TEXTO8);
+        }
+        else if(opcion==2){
+            Textos ingles = new Ingles();
+            System.out.println(ingles.MENU);
+            System.out.println(ingles.TEXTO_1);
+            System.out.println(ingles.TEXTO2);
+            System.out.println(ingles.TEXTO3);
+            System.out.println(ingles.TEXTO4);
+            System.out.println(ingles.TEXTO5);
+            System.out.println(ingles.TEXTO6);
+            System.out.println(ingles.TEXTO7);
+            System.out.println(ingles.TEXTO8);
+        }
+
+        else{
+            System.out.println("ERROR");
+        }
+
 
 /**
  * Utilizo switch para que el usuario eliga la opcion y llamo las funciones
+ * Tambien se manda a llamar la funcion de "Texto" para que al momento de elejir
+ * el idioma las demas lineas de texto se puedan traducir.
  */
-        Scanner scanner = new Scanner(System.in);
-        int opcion = scanner.next().charAt(0);
+         scanner = new Scanner(System.in);
 
+         opcion = scanner.next().charAt(0);
+
+        Operacion op = null;
         switch (opcion){
-            case '1':
-                System.out.println("---Suma---");
-                System.out.println("ingrese el primer valor");
-                int valor1 = scanner.nextInt();
-                System.out.println("ingrese el segundo valor");
-                int valor2 = scanner.nextInt();
-                Suma suma = new Suma();
-                int resultado = suma.calcular(valor1, valor2);
 
-                System.out.println("el resultado es: "+ resultado);
+            case '1':
+                System.out.println(Textos.TEXTO_1);
+                System.out.println(Textos.VALOR1);
+                int valor1 = scanner.nextInt();
+                System.out.println(Textos.VALOR2);
+                int valor2 = scanner.nextInt();
+                op = new Suma();
+
+                System.out.println("el resultado es "+op.getClass()+ "es: "+op.calcular(valor1,valor2));
+
+                break;
+
 
 
             case '2':
-                System.out.println("---Resta---");
-                System.out.println("ingrese el primer valor");
+                System.out.println(Textos.TEXTO2);
+                System.out.println(Textos.VALOR1);
                 valor1 = scanner.nextInt();
-                System.out.println("ingrese el segundo valor");
+                System.out.println(Textos.VALOR2);
                 valor2 = scanner.nextInt();
                 Resta resta = new Resta();
-                resultado = resta.calcular(valor1, valor2);
+                op = new Resta();
 
-                System.out.println("el resultado es: "+ resultado);
+                System.out.println("el resultado es "+op.getClass()+ "es: "+op.calcular(valor1,valor2));
+
+                break;
 
             case '3':
-                System.out.println("---Multiplicar---");
-                System.out.println("ingrese el primer valor");
+                System.out.println(Textos.TEXTO3);
+                System.out.println(Textos.VALOR1);
                 valor1 = scanner.nextInt();
-                System.out.println("ingrese el segundo valor");
+                System.out.println(Textos.VALOR2);
                 valor2 = scanner.nextInt();
-               Multiplicacion multiplicacion = new Multiplicacion();
-                resultado = multiplicacion.calcular(valor1, valor2);
+                op = new Multiplicacion();
 
-                System.out.println("el resultado es: "+ resultado);
+                System.out.println("el resultado es "+op.getClass()+ "es: "+op.calcular(valor1,valor2));
+
+                break;
 
             case '4':
-                System.out.println("---Dividir---");
-                System.out.println("ingrese el dividendo");
+                System.out.println(Textos.TEXTO4);
+                System.out.println(Textos.DIVIDENDO);
                 valor1 = scanner.nextInt();
-                System.out.println("ingrese el divisor");
+                System.out.println(Textos.DIVISOR);
                 valor2 = scanner.nextInt();
                 Division division = new Division();
-                resultado = division.calcular(valor1, valor2);
+                op = new Division();
 
-                System.out.println("el resultado es: "+ resultado);
+                System.out.println("el resultado es "+op.getClass()+ "es: "+op.calcular(valor1,valor2));
+
+                break;
 
             case '5':
-                System.out.println("---Potencia---");
-                System.out.println("ingrese el numero base");
+                System.out.println(Textos.TEXTO5);
+                System.out.println(Textos.NUMEROBASE);
                 valor1 = scanner.nextInt();
-                System.out.println("ingrese la potencia");
+                System.out.println(Textos.POTENCIA);
                 valor2 = scanner.nextInt();
                 Potencia potencia = new Potencia();
-                resultado = potencia.calcular(valor1, valor2);
+                op = new Potencia();
 
-                System.out.println("el resultado es: "+ resultado);
+                System.out.println("el resultado es "+op.getClass()+ "es: "+op.calcular(valor1,valor2));
+
+
+                break;
 
 
             case '6':
-                System.out.println("---Modulo---");
-                System.out.println("ingrese valor 1");
+                System.out.println(Textos.TEXTO6);
+                System.out.println(Textos.VALOR1);
                 valor1 = scanner.nextInt();
-                System.out.println("ingrese valor 2");
+                System.out.println(Textos.VALOR2);
                 valor2 = scanner.nextInt();
                 Modulo modulo= new Modulo();
-                resultado = modulo.calcular(valor1, valor2);
-                System.out.println("el resultado es: "+ resultado);
+                op = new Modulo();
+
+                System.out.println("el resultado es "+op.getClass()+ "es: "+op.calcular(valor1,valor2));
+
+                break;
 
 
 
             case '7':
-                System.out.println("---Raiz---");
-                System.out.println("ingrese el primer valor");
+                System.out.println(Textos.TEXTO7);
+                System.out.println(Textos.VALOR1);
                 valor1 = scanner.nextInt();
-                System.out.println("ingrese el primer valor");
-                valor2 = 0;//aqui lo puse como cero por que es la raiz el segundo valor no se necesita pero al borrarlo me da error de todos modos
-                //por eso lo declare en 0
-                Raiz raiz = new Raiz();
-                resultado = raiz.calcular(valor1,valor2);
+                System.out.println(Textos.VALOR2);
+                valor2 = scanner.nextInt();
+                Raizcorregida raizcorregida = new Raizcorregida();
+                op = new Raizcorregida();
 
-                System.out.println("el resultado es: "+ resultado);
+                System.out.println("el resultado es "+op.getClass()+ "es: "+op.calcular(valor1,valor2));
+
+
+                break;
             case '8':
-                System.out.println("---Logaritmo---");
-                System.out.println("ingrese el primer valor");
+                System.out.println(Textos.TEXTO8);
+                System.out.println(Textos.VALOR1);
                 valor1 = scanner.nextInt();
+                System.out.println(Textos.VALOR2);
                 valor2 = scanner.nextInt();
                 Logaritmo logaritmo = new Logaritmo();
-                resultado = logaritmo.calcular( valor1,valor2);
+                op = new Logaritmo();
 
-                System.out.println("el resultado es: "+ resultado);
+                System.out.println("el resultado es "+op.getClass()+ "es: "+op.calcular(valor1,valor2));
+
+
+                break;
 
             case '9':
+            default:
+                String error = "Error";
 
 
         }
 
+
+    }
+    public static void printlnResult(Operacion op , int valor1, int valor2){
+        System.out.println("el resultado es "+op.getClass()+ "es: "+op.calcular(valor1,valor2));
     }
 }
+/**
+ * En el getclass ya no supe que procedia por que si me da el resultado
+ * pero tambien me da el nombre de mi clase jaja
+ */
