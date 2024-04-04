@@ -12,5 +12,6 @@ public class Division extends Resta {
             cociente++;
         }
         return cociente;
+
     }
 }
