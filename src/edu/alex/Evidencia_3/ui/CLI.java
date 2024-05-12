@@ -8,6 +8,7 @@ import edu.alex.Evidencia_3.process.PlayerLeaderboard;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
 /**
  * La clase CLI proporciona la interfaz de línea de comandos para el juego Tic-Tac-Toe.
  * Permite a los usuarios interactuar con el juego seleccionando idiomas, introduciendo nombres de jugadores,
@@ -31,6 +32,7 @@ public class CLI {
         availableSymbols.add('O');
         availableSymbols.add('X');
     }
+
     /**
      * Presenta las opciones de idioma al usuario y establece el idioma seleccionado para la interfaz.
      */
@@ -59,12 +61,14 @@ public class CLI {
                 Languages.getInstance("ESP");
         }
     }
+
     /**
      * Muestra un mensaje de bienvenida al usuario en el idioma seleccionado.
      */
     private static void printWelcome() {
         System.out.println(Languages.BIENVENIDA);
     }
+
     /**
      * Solicita al usuario que introduzca el nombre de un jugador.
      *
@@ -75,11 +79,12 @@ public class CLI {
         System.out.print(Languages.NOMBRES + playerNumber + ": ");
         return scanner.nextLine().trim();
     }
+
     /**
-     * Solicita al usuario que introduzca el nombre de un jugador.
+     * Permite al usuario seleccionar un símbolo de una lista de símbolos disponibles.
      *
-     * @param playerName El número del jugador para el cual se solicita el nombre.
-     * @return El nombre introducido por el usuario.
+     * @param playerName El nombre del jugador que seleccionará el símbolo.
+     * @return El símbolo seleccionado por el usuario.
      */
     private static char promptForPlayerSymbol(String playerName) {
         System.out.println(Languages.SIMBOLOS);
@@ -93,6 +98,7 @@ public class CLI {
         availableSymbols.remove(choice); // Elimina el símbolo seleccionado de los disponibles
         return symbol;
     }
+
     /**
      * Solicita al usuario que elija el modo de juego.
      *
@@ -104,6 +110,7 @@ public class CLI {
         scanner.nextLine(); // Limpia el buffer del scanner
         return choice == 2;
     }
+
     /**
      * Pregunta al usuario si desea jugar otra vez.
      *
@@ -112,7 +119,9 @@ public class CLI {
     private static boolean promptForNewGame() {
         System.out.println(Languages.JUGAR_DE_NUEVO);
         String response = scanner.nextLine().trim().toLowerCase();
-        return Languages.AFIRMATIVO.equalsIgnoreCase(response);}
+        return Languages.AFIRMATIVO.equalsIgnoreCase(response);
+    }
+
     /**
      * Muestra la tabla de líderes con los jugadores y sus respectivas victorias.
      */
@@ -123,7 +132,9 @@ public class CLI {
             System.out.println(Languages.TABLA_VACIA);
             return;
         }
-        leaders.forEach(player -> System.out.println(player.getName() + Languages.SIMBOLO + player.getSymbol() + Languages.VICTORIAS + player.getWins()));    }
+        leaders.forEach(player -> System.out.println(player.getName() + Languages.SIMBOLO + player.getSymbol() + Languages.VICTORIAS + player.getWins()));
+    }
+
     /**
      * Inicia y gestiona un juego de Tic-Tac-Toe.
      * Configura el juego basado en las entradas del usuario y gestiona el flujo del juego.
@@ -143,20 +154,18 @@ public class CLI {
 
         GameManager gameManager = new GameManager(player1, player2, leaderboard);
 
-        do {
-            gameManager.playGame();
-        } while (promptForNewGame());
-
-        showLeaderboard();
+        gameManager.playGame();
     }
+
     /**
-     * Inicia y gestiona un juego de Tic-Tac-Toe.
-     * Configura el juego basado en las entradas del usuario y gestiona el flujo del juego.
+     * Lanza la aplicación de Tic-Tac-Toe. Gestiona el ciclo de vida completo de la aplicación,
+     * desde la selección del idioma hasta la repetición de juegos según la elección del usuario.
      */
     public static void launchApp() {
+        selectLanguage();
         do {
-            selectLanguage();
             playGame();
+            showLeaderboard();
         } while (promptForNewGame());
 
         System.out.println(Languages.DESPEDIDA);
